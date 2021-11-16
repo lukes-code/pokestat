@@ -18,3 +18,6 @@ type(s), number, abilities (done)
 Display an image for each Pokémon (done on more details page)
 Anything else you’d like to add, this is your opportunity to show
 off
+
+
+#https://pokeapi-stat.netlify.app/
