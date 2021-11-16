@@ -7,7 +7,7 @@ const StyledP = styled.p`
     margin: 5px;
     font-weight: bold;
     flex: 1;
-    
+    text-align: center;
 `;
 
 const StyledSpan = styled.span`
