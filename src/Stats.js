@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import Nav from './Components/Nav';
 import PokeInfo from './Components/PokeInfo';
 

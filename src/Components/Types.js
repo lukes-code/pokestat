@@ -12,7 +12,7 @@ const StyledP = styled.p`
     background-color: #fff;
     padding: 5px 10px;
     border-radius: 999px;
-    
+    text-align: center;
 `;
 
 const StyledDiv = styled.div`

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
+import MainImage from "./MainImage";
 
 class PokeList extends React.Component{
 
@@ -84,6 +85,7 @@ class PokeList extends React.Component{
                     <StyledH3>Poke index</StyledH3>
                     {this.state.pokemon.map((pokemon, index) => (
                         <StyledDiv>
+                            <MainImage number={index + 1}/>
                             <h6>{pokemon.name}</h6>
                             <Link to={{ pathname: `/pokemon/${index + 1}`, state: { number: index + 1 } }}>
                                 <StyledBtn>More</StyledBtn>
