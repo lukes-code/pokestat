@@ -13,16 +13,17 @@ const StyledDiv = styled.div`
 
 const StyledImg = styled.img`
     flex: 1;
-    margin: 0 auto;
+    margin: 20px auto;
     max-height: 150px;
     max-width: 150px;
 `;
 
 class DetailImage extends React.Component{
     render() {
+        const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${this.props.number}.png`;
         return(
             <StyledDiv>
-                <StyledImg src={this.props.image} />
+                <StyledImg src={url} />
             </StyledDiv>
         );
     }

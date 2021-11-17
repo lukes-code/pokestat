@@ -45,7 +45,7 @@ function PokeList() {
     } else {
         return(
             <StyledDiv>
-                <DetailImage image={pokemon.sprites.front_default} />
+                <DetailImage number={pokemon.id} />
                 <Name name={pokemon.name} number={pokemon.id}/>
                 <Types types={pokemon.types} />
                 <Sizing weight={pokemon.weight * 100} height={pokemon.height * 10} />
