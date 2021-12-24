@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const StyledP = styled.p`
@@ -30,17 +29,15 @@ const StyledDiv = styled.div`
     margin: 15px auto;
 `;
 
-class Abilities extends React.Component{
-    render() {
-        return(
-            <StyledParentDiv>
-                <StyledHeadP>Abilities</StyledHeadP>
-                <StyledDiv>
-                {this.props.abilities.map(abilities => <StyledP key={abilities.ability.name}> {abilities.ability.name} </StyledP>)}
-                </StyledDiv>
-            </StyledParentDiv>
-        );
-    }
+function Abilities(props) {
+    return(
+        <StyledParentDiv>
+            <StyledHeadP>Abilities</StyledHeadP>
+            <StyledDiv>
+            {props.abilities.map(abilities => <StyledP key={abilities.ability.name}> {abilities.ability.name} </StyledP>)}
+            </StyledDiv>
+        </StyledParentDiv>
+    );
 }
 
 export default Abilities;

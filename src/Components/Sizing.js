@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const StyledP = styled.p`
@@ -21,15 +20,13 @@ const StyledDiv = styled.div`
     margin: 15px auto;
 `;
 
-class Sizing extends React.Component{
-    render() {
-        return(
-            <StyledDiv>
-                <StyledP>{this.props.weight}g <br></br><StyledSpan>Weight</StyledSpan></StyledP>
-                <StyledP>{this.props.height}cm<br></br><StyledSpan>Height</StyledSpan></StyledP>
-            </StyledDiv>
-        );
-    }
+function Sizing(props) {
+    return(
+        <StyledDiv>
+            <StyledP>{props.weight}g <br></br><StyledSpan>Weight</StyledSpan></StyledP>
+            <StyledP>{props.height}cm<br></br><StyledSpan>Height</StyledSpan></StyledP>
+        </StyledDiv>
+    );
 }
 
 export default Sizing;

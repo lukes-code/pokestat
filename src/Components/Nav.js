@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import logo from '../Img/logo.png';
 
@@ -15,7 +14,7 @@ const StyledImg = styled.img`
     max-height: 50px;
 `;
 
-const Nav = () => {
+function Nav() {
     return(
         <StyledNav>
             <StyledImg src={logo} />

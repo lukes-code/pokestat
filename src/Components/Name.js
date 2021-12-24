@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const StyledP = styled.p`
@@ -11,12 +10,10 @@ const StyledP = styled.p`
     text-align: center;
 `;
 
-class Name extends React.Component{
-    render() {
-        return(
-            <StyledP>{this.props.name}</StyledP>
-        );
-    }
+function Name(props) {
+    return(
+        <StyledP>{props.name}</StyledP>
+    );
 }
 
 export default Name;

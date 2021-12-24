@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+import {useState, useEffect} from 'react';
 import { Link, useLocation } from "react-router-dom";
 import DetailImage from './DetailImage';
 import Name from './Name';
@@ -8,20 +7,16 @@ import Sizing from './Sizing';
 import Abilities from './Abilities';
 import BaseStats from './BaseStats';
 
-//Style-components
-const StyledDiv = styled.div`
-`;
-
 function PokeList() {
     let location = useLocation();
     const arNum = location.pathname.split("/");
     const pokeNum = arNum[2];
-    const [pokemon, setPokemon] = React.useState()
-    const [poke, setPoke] = React.useState()
+    const [pokemon, setPokemon] = useState()
+    const [poke, setPoke] = useState()
     console.log(pokeNum);
 
     //Get specific pokemon
-    React.useEffect(() => {
+    useEffect(() => {
         const fetchData = async () => {
             const baseUrl = `https://pokeapi.co/api/v2/pokemon/${pokeNum}`;
             fetch(baseUrl)
@@ -34,7 +29,6 @@ function PokeList() {
         }
         fetchData()
     }, []);
-
     
 
     if (!poke){
@@ -44,14 +38,14 @@ function PokeList() {
         );
     } else {
         return(
-            <StyledDiv>
+            <div>
                 <DetailImage number={pokemon.id} />
                 <Name name={pokemon.name} number={pokemon.id}/>
                 <Types types={pokemon.types} />
                 <Sizing weight={pokemon.weight * 100} height={pokemon.height * 10} />
                 <Abilities abilities={pokemon.abilities} />
                 <BaseStats stats={pokemon.stats} />
-            </StyledDiv>
+            </div>
         );
     }
 }

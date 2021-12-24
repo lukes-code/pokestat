@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';//Style-components
 
 const StyledDiv = styled.div`
@@ -18,15 +17,13 @@ const StyledImg = styled.img`
     max-width: 150px;
 `;
 
-class DetailImage extends React.Component{
-    render() {
-        const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${this.props.number}.png`;
-        return(
-            <StyledDiv>
-                <StyledImg src={url} />
-            </StyledDiv>
-        );
-    }
+function DetailImage(props) {
+    const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props.number}.png`;
+    return(
+        <StyledDiv>
+            <StyledImg src={url} />
+        </StyledDiv>
+    );
 }
 
 export default DetailImage;

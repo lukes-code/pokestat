@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import ProgressBar from './ProgressBar';
 
@@ -41,21 +40,19 @@ const StyledDiv = styled.div`
     flex-wrap: wrap;
 `;
 
-class BaseStats extends React.Component{
-    render() {
-        return(
-            <StyledParentDiv>
-                <StyledHeadP>Base Stats</StyledHeadP>
-                <StyledDiv>
-                {this.props.stats.map(stats => 
-                    <StyledP key={stats.stat.name}> 
-                        <ProgressBar name={stats.stat.name} stat={stats.base_stat}/>
-                    </StyledP>
-                )}
-                </StyledDiv>
-            </StyledParentDiv>
-        );
-    }
+function BaseStats(props) {
+    return(
+        <StyledParentDiv>
+            <StyledHeadP>Base Stats</StyledHeadP>
+            <StyledDiv>
+            {props.stats.map(stats => 
+                <StyledP key={stats.stat.name}> 
+                    <ProgressBar name={stats.stat.name} stat={stats.base_stat}/>
+                </StyledP>
+            )}
+            </StyledDiv>
+        </StyledParentDiv>
+    );
 }
 
 export default BaseStats;

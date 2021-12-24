@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const StyledP = styled.p`
@@ -21,12 +20,10 @@ const StyledDiv = styled.div`
     margin: 15px auto;
 `;
 
-class Types extends React.Component{
-    render() {
-        return(
-            <StyledDiv>{this.props.types.map(types => <StyledP key={types.type.name}> {types.type.name} </StyledP>)}</StyledDiv>
-        );
-    }
+function Types(props) {
+    return(
+        <StyledDiv>{props.types.map(types => <StyledP key={types.type.name}> {types.type.name} </StyledP>)}</StyledDiv>
+    );
 }
 
 export default Types;
