@@ -1,44 +1,69 @@
-import {useState, useEffect} from 'react';
+import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import styled from 'styled-components';
 
-const StyledP = styled.p`
-  position: relative;
-  top: -95px;
-`;
+class ProgressBar extends React.Component {
+    constructor(props) {
+      super(props);
 
-function ProgressBar(props) {
-  const [options, setOptions] = useState();
-  const [series, setSeries] = useState();
+      this.state = {
+      
+        series: [70],
+        options: {
+          chart: {
+            height: 50,
+            type: 'radialBar',
+          },
+          plotOptions: {
+            radialBar: {
+              hollow: {
+                size: '10%',
+              }
+            },
+          },
+          labels: ['Cricket'],
+        }
+      
+      };
+    }
 
-    useEffect(() => {
-        let percentCalc = (props.stat * 100) / 255;
+    componentDidMount() {
+        let percentCalc = (this.props.stat * 100) / 255;
         let percentValue = Math.round(percentCalc * 10) / 10;
-        setOptions({
-          options: {
+        console.log(this.props.stat + ' times 100 is ' + (this.props.stat * 100) + ' and final is ' + percentValue);
+        this.setState({
+            series: [percentValue],
+            options: {
             chart: {
                 height: 10,
                 type: 'radialBar',
             },
             plotOptions: {
                 radialBar: {
-                  hollow: {
-                      size: '50%',
-                  }
+                hollow: {
+                    size: '50%',
+                }
                 },
             },
-            labels: [props.name],
+            labels: [this.props.name],
             }
-        });
-        setSeries({ series: [percentValue] });
-    });
-        
-    return (
-      <div id="chart">
-          <Chart options={options} series={series} type="radialBar" height={200} />
-          <StyledP>{props.stat}/255</StyledP>
-      </div>
-    );
+        })
+    }
+
+  
+
+    render() {
+        const StyledP = styled.p`
+        position: relative;
+        top: -95px;
+        `;
+      return (
+        <div id="chart">
+            <Chart options={this.state.options} series={this.state.series} type="radialBar" height={200} />
+            <StyledP>{this.props.stat}/255</StyledP>
+        </div>
+      );
+    }
 }
 
 export default ProgressBar;
